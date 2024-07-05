@@ -4,7 +4,7 @@ import { userActions } from "./userSlice";
 export const fetchUserList = () => {
   return async (dispatch) => {
     const fetchUsers = async () => {
-      const response = await axios.get("https://localhost:3000/users");
+      const response = await axios.get("http://localhost:3001/users");
       const userlistArray = response.data;
       return userlistArray;
     };
@@ -17,10 +17,7 @@ export const fetchUserList = () => {
 export const createNewUser = (newUser) => {
   return async (dispatch) => {
     const createUser = async () => {
-      const response = await axios.post(
-        "https://localhost:3000/users",
-        newUser
-      );
+      const response = await axios.post("http://localhost:3001/users", newUser);
       return response.data;
     };
     const newUser = await createUser();

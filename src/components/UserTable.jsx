@@ -30,7 +30,7 @@ const UserTable = () => {
             <p>name: {selectedUser.name}</p>
             <p>userName: {selectedUser.username}</p>
             <p>email: {selectedUser.email}</p>
-            <textarea>address: {selectedUser.address}</textarea>
+            <p>PIN: {selectedUser.address.zipcode}</p>
           </div>
         )}
       </div>

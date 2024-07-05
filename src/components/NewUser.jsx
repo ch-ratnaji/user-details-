@@ -7,12 +7,12 @@ const NewUser = () => {
   const [name, setName] = useState("");
   const [userName, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [address, setAddress] = useState("");
+  const [PIN, setPIN] = useState("");
   const [company, setCompany] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(() => createNewUser({ name, userName, email, address, company }));
+    dispatch(() => createNewUser({ name, userName, email, PIN, company }));
   }
 
   return (
@@ -43,9 +43,9 @@ const NewUser = () => {
       />
       <input
         type="text"
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-        placeholder="Address"
+        value={PIN}
+        onChange={(e) => setPIN(e.target.value)}
+        placeholder="Pin code"
       />
       <button type="submit">Create User</button>
     </form>
