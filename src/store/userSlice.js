@@ -5,9 +5,10 @@ const userslice = createSlice({
   initialState: {
     userList: [],
     selectedUser: null,
+    newUserState: false,
   },
   reducers: {
-    UserListBackend(state, action) {
+    UserListFromBackend(state, action) {
       state.userList = action.payload;
     },
     setSelectedUser(state, action) {
@@ -17,6 +18,9 @@ const userslice = createSlice({
     },
     updatedUserList(state, action) {
       state.userList.push(action.payload);
+    },
+    setNewUserState(state, action) {
+      state.newUserState = action.payload;
     },
   },
 });

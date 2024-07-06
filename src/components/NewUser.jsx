@@ -1,6 +1,7 @@
 import { createNewUser } from "../store/user-actions";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { userActions } from "../store/userSlice";
 
 const NewUser = () => {
   const dispatch = useDispatch();
@@ -13,6 +14,12 @@ const NewUser = () => {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch(() => createNewUser({ name, userName, email, PIN, company }));
+    setName("");
+    setUserName("");
+    setEmail("");
+    setCompany("");
+    setCompany("");
+    dispatch(() => userActions.setNewUserState("false"));
   }
 
   return (

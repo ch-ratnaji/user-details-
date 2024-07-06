@@ -10,7 +10,7 @@ export const fetchUserList = () => {
     };
     const userList = await fetchUsers();
 
-    dispatch(userActions.UserListBackend(userList));
+    dispatch(userActions.UserListFromBackend(userList));
   };
 };
 
@@ -21,5 +21,6 @@ export const createNewUser = (newUser) => {
       return response.data;
     };
     const newUser = await createUser();
+    dispatch(userActions.updatedUserList(newUser));
   };
 };
