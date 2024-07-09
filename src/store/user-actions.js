@@ -16,11 +16,31 @@ export const fetchUserList = () => {
 
 export const createNewUser = (newUser) => {
   return async (dispatch) => {
-    const createUser = async () => {
-      const response = await axios.post("http://localhost:3001/users", newUser);
-      return response.data;
-    };
-    const newUser = await createUser();
-    dispatch(userActions.updatedUserList(newUser));
+    // const createUser = async () => {
+    debugger;
+    const response = await axios.post("http://localhost:3001/users", newUser);
+    // return response.data;
+    // };
+    // const createdUser = await createUser();
+    // dispatch(userActions.updatedUserList(createdUser));
+    // dispatch(userActions.fetchUserList());
+    dispatch(fetchUserList());
+  };
+};
+
+export const editUser = (updatedUser) => {
+  return async (dispatch) => {
+    await axios.put(
+      `http://localhost:3001/users/${updatedUser.id}`,
+      updatedUser
+    );
+    dispatch(userActions.updateUserInList(updatedUser));
+  };
+};
+
+export const deleteUser = (userId) => {
+  return async (dispatch) => {
+    await axios.delete(`http://localhost:3001/users/${userId}`);
+    dispatch(userActions.deleteUserFromList(userId));
   };
 };

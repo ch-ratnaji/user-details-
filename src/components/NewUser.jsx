@@ -2,6 +2,7 @@ import { createNewUser } from "../store/user-actions";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { userActions } from "../store/userSlice";
+import "./NewUser.css";
 
 const NewUser = () => {
   const dispatch = useDispatch();
@@ -13,17 +14,24 @@ const NewUser = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch(() => createNewUser({ name, userName, email, PIN, company }));
+    const requestObject = {
+      name,
+      username: userName,
+      email,
+      address: { zipcode: PIN },
+      company: { name: company },
+    };
+    dispatch(createNewUser(requestObject));
     setName("");
     setUserName("");
     setEmail("");
     setCompany("");
-    setCompany("");
-    dispatch(() => userActions.setNewUserState("false"));
+    setPIN("");
+    dispatch(userActions.setNewUserState("false"));
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="newUser-form">
       <input
         type="text"
         value={name}

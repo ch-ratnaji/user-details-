@@ -1,0 +1,43 @@
+.popUp-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.popUp {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+}
+
+.popUp button {
+  background-color: lightcoral;
+  padding: 10px 20px;
+  color: rgb(13, 2, 2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: auto;
+  height: 50px;
+}
+
+.popUp-container .popUp button:hover {
+  background-color: red;
+  color: whitesmoke;
+}

@@ -1,0 +1,39 @@
+.editUser-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.editUser-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.editUser-form button {
+  background-color: lightcoral;
+  padding: 10px 20px;
+  color: rgb(13, 2, 2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.editUser-form button:hover {
+  background-color: red;
+  color: whitesmoke;
+}
+
+.editUser-form button[type="button"] {
+  background-color: lightgray;
+  color: black;
+}
+
+.editUser-form button[type="button"]:hover {
+  background-color: gray;
+  color: white;
+}

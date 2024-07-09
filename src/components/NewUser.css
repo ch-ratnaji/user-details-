@@ -1,0 +1,29 @@
+.newUser-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newUser-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.newUser-form button {
+  background-color: lightcoral;
+  padding: 10px 20px;
+  color: rgb(13, 2, 2);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.newUser-form button:hover {
+  background-color: red;
+  color: whitesmoke;
+}

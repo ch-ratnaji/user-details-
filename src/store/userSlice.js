@@ -22,6 +22,19 @@ const userslice = createSlice({
     setNewUserState(state, action) {
       state.newUserState = action.payload;
     },
+    updateUserInList(state, action) {
+      const updatedUser = action.payload;
+      const index = state.userList.findIndex(
+        (user) => user.id === updatedUser.id
+      );
+      if (index !== -1) {
+        state.userList[index] = updatedUser;
+      }
+    },
+    deleteUserFromList(state, action) {
+      const id = action.payload;
+      state.userList = state.userList.filter((user) => user.id !== id);
+    },
   },
 });
 
